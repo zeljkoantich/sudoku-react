@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './core/service-worker';
 import { GlobalStyles, MainTheme } from './styles';
 import { ThemeProvider } from 'styled-components';
+import { Content } from './components';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={MainTheme}>
       <GlobalStyles />
-      <div>abc 123</div>
+      <Content>
+        <div>abc 123</div>
+      </Content>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
