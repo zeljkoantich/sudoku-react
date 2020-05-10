@@ -1,14 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './core/service-worker';
-import { GlobalStyles } from './styles';
+import { GlobalStyles, MainTheme } from './styles';
+import { ThemeProvider } from 'styled-components';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Fragment>
+    <ThemeProvider theme={MainTheme}>
       <GlobalStyles />
       <div>abc 123</div>
-    </Fragment>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
