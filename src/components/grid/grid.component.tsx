@@ -1,31 +1,38 @@
 import React, { FC, Children } from 'react';
 import { CyDataAttributes as cy } from '../../common';
+import styled from 'styled-components';
+import BlockComponent from './block/block.component';
 
 const GridComponent: FC = () => {
   const rows = new Array(9);
   return (
-    <div data-cy={cy.GRID_CONTAINER}>
-      {
-        Children.toArray( // for unique keys (instead of array index)
-          [...rows].map(() => GRID_ROW())
-        )
-      }
-    </div>
+    /* Children.toArray: for unique keys (instead of array index) */
+    <Container data-cy={cy.GRID_CONTAINER}>
+      {Children.toArray([...rows].map((_, rowIndex) => GRID_ROW(rowIndex)))}
+    </Container>
   )
 };
-const GRID_ROW = () => {
+export default GridComponent;
+
+const GRID_ROW = (rowIndex: number) => {
   const blocks = new Array(9);
   return (
-    <div data-cy={cy.GRID_ROW_CONTAINER}>row
-      {
-        Children.toArray( // for unique keys (instead of array index)
-          [...blocks].map(() => GRID_BLOCK())
-        )
-      }
-    </div>
+    /* Children.toArray: for unique keys (instead of array index) */
+    <Row data-cy={cy.GRID_ROW_CONTAINER}>row
+      {Children.toArray([...blocks].map((_, colIndex) => (
+        <BlockComponent colIndex={colIndex} rowIndex={rowIndex} />
+      )))}
+    </Row>
   );
 };
 
-const GRID_BLOCK = () => <div data-cy={cy.BLOCK}>block</div>;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+`;
 
-export default GridComponent;
+const Row = styled.div`
+  display: flex;
+  flex-flow: row;
+`;
