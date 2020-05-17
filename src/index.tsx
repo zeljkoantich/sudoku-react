@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as serviceWorker from './core/service-worker';
-import { GlobalStyles, MainTheme } from './styles';
+import * as serviceWorker from 'core/service-worker';
+import { GlobalStyles, MainTheme } from 'styles';
 import { ThemeProvider } from 'styled-components';
-import { Content, Title, Card, GridComponent } from './components';
-import { CyDataAttributes as cy } from './common';
+import { Content, Title, Card } from 'custom-styled-components';
+import { GridComponent } from 'components';
+import { CyDataAttributes as cy } from 'common';
 
 ReactDOM.render(
   <React.StrictMode>
