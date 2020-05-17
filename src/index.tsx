@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './core/service-worker';
 import { GlobalStyles, MainTheme } from './styles';
 import { ThemeProvider } from 'styled-components';
-import { Content } from './components';
+import { Content, Title } from './components';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={MainTheme}>
       <GlobalStyles />
       <Content>
-        <div>abc 123</div>
+        <Title>Sudoku</Title>
       </Content>
     </ThemeProvider>
   </React.StrictMode>,
