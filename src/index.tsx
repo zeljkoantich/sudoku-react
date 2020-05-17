@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './core/service-worker';
 import { GlobalStyles, MainTheme } from './styles';
 import { ThemeProvider } from 'styled-components';
-import { Content, Title } from './components';
+import { Content, Title, Card } from './components';
 import { CyDataAttributes as cy } from './common';
 
 ReactDOM.render(
@@ -12,6 +12,9 @@ ReactDOM.render(
       <GlobalStyles />
       <Content data-cy={cy.CONTENT}>
         <Title data-cy={cy.TITLE} >Sudoku</Title>
+        <Card data-cy={cy.CARD}>
+          Work in progress ...
+        </Card>
       </Content>
     </ThemeProvider>
   </React.StrictMode>,

@@ -1,4 +1,5 @@
 export enum CyDataAttributes {
   CONTENT = 'content',
-  TITLE = 'title'
+  TITLE = 'title',
+  CARD = 'card'
 }
