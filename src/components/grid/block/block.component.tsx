@@ -10,8 +10,8 @@ interface IBlockCProps {
 const BlockComponent: FC<IBlockCProps> = ({ colIndex, rowIndex }) => {
   return (
     <Container data-cy={`${cy.BLOCK}-${rowIndex}-${colIndex}`}>
-      |{rowIndex}|
-      |{colIndex}|
+      {/* |{rowIndex}| */}
+      {/* |{colIndex}| */}
     </Container>
   );
 };
