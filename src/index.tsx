@@ -4,13 +4,14 @@ import * as serviceWorker from './core/service-worker';
 import { GlobalStyles, MainTheme } from './styles';
 import { ThemeProvider } from 'styled-components';
 import { Content, Title } from './components';
+import { CyDataAttributes as cy } from './common';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={MainTheme}>
       <GlobalStyles />
-      <Content>
-        <Title>Sudoku</Title>
+      <Content data-cy={cy.CONTENT}>
+        <Title data-cy={cy.TITLE} >Sudoku</Title>
       </Content>
     </ThemeProvider>
   </React.StrictMode>,
