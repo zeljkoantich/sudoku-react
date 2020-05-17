@@ -18,7 +18,7 @@ const GRID_ROW = (rowIndex: number) => {
   const blocks = new Array(9);
   return (
     /* Children.toArray: for unique keys (instead of array index) */
-    <Row data-cy={cy.GRID_ROW_CONTAINER}>row
+    <Row data-cy={cy.GRID_ROW_CONTAINER}>
       {Children.toArray([...blocks].map((_, colIndex) => (
         <BlockComponent colIndex={colIndex} rowIndex={rowIndex} />
       )))}
